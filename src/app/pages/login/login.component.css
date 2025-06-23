@@ -1,0 +1,29 @@
+.container-fluid{
+    background-color: rgba(0, 0, 255, 0.788);
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-box{
+    background-color: white;
+    width:30%;
+    padding: 3%;
+    border-radius: 20px;
+    margin-top:66px;
+    margin-bottom:66px;
+}
+
+.form-field-box{
+    display: flex;
+    flex-direction: column;
+}
+.form-field{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.field-box{
+    margin-top: 25px;
+}

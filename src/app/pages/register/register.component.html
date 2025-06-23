@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="register-box">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="form-field-box">
+        <div class="form-field">
+          <h3 style="text-align: center; font-weight: bold;">SignUp</h3>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-field field-box">
+          <input
+            type="email"
+            class="form-control form-control-lg"
+            formControlName="email"
+            placeholder="Email"
+          />
+          <div
+            *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched"
+            class="form-text text-danger"
+          >
+            Valid email required
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-field field-box">
+          <input
+            class="form-control form-control-lg"
+            type="password"
+            formControlName="password"
+            placeholder="Create Password"
+          />
+          <div *ngIf="registerForm.controls['password'].touched">
+            <div *ngIf="registerForm.controls['password'].errors?.['required']" class="text-danger">
+              Password is required.
+            </div>
+            <div *ngIf="registerForm.controls['password'].errors?.['pattern']" class="text-danger">
+              Password must be at least 6 characters, include one uppercase letter and one number.
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm Password Field (Optional if you want to match later) -->
+        <div class="form-field">
+          <input
+            class="form-control form-control-lg"
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirm Password"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-field d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Signup</button>
+        </div>
+
+        <!-- Link to Login -->
+        <div class="form-field">
+          <p style="text-align: center; color: #000;">
+            Already have an account? <a routerLink="/login">Login</a>
+          </p>
+        </div>
+
+        <!-- OR Divider -->
+        <div class="form-field-for">
+          <p style="text-align: center; color: #919191e0;">
+            _______________________Or________________________
+          </p>
+        </div>
+
+        <!-- Facebook Login -->
+        <div class="form-field d-grid gap-2">
+          <button
+            class="btn btn-primary btn-lg d-flex align-items-center justify-content-center"
+            type="button"
+            style="position: relative; padding-left: 32px; font-size: 0.95rem; background-color: #3B5998;"
+          >
+            <img
+              [src]="fbbutton"
+              alt="Facebook"
+              style="position: absolute; left: 10px; width: 25px; height: 25px;"
+            />
+            Login with Facebook
+          </button>
+        </div>
+
+        <!-- Google Login -->
+        <div class="form-field d-grid gap-2">
+          <button
+            class="btn btn-primary btn-lg d-flex align-items-center justify-content-center"
+            type="button"
+            style="position: relative; padding-left: 32px; font-size: 0.95rem; color: #000; background-color: #ffffff;"
+          >
+            <img
+              [src]="googlebutton"
+              alt="Google"
+              style="position: absolute; left: 10px; width: 25px; height: 25px;"
+            />
+            Login with Google
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

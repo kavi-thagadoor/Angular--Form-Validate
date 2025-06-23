@@ -1,0 +1,56 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <input formControlName="email" placeholder="Email" />
+    <input type="password" formControlName="password" placeholder="Password" />
+    <button type="submit">Login</button>
+  </form>
+   -->
+
+<div class="container-fluid">
+  <div class="register-box">
+
+    <div class="form-field-box">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="form-field">
+          <h3 style="text-align: center;font-weight: bold;">Login</h3>
+        </div>
+        <div class="form-field field-box">
+          <input type="email" placeholder="Email" formControlName="email" class="form-control form-control-lg"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-field field-box">
+          <input type="password" placeholder="Password" formControlName="password" class="form-control form-control-lg"
+            id="exampleInputEmail1" aria-describedby="Password">
+        </div>
+        <div class="form-field field-box">
+          <p style="text-align: center;color: #2407a1;cursor: pointer;">Forgot Password?</p>
+        </div>
+        <div class="form-field d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </form>
+      <div class="form-field">
+        <p style="text-align: center;color: #000;">Don't have an account?<a href="register">Register</a></p>
+      </div>
+      <div class="form-field-for">
+        <p style="text-align: center;color: #919191e0;">_______________________Or________________________</p>
+      </div>
+      <div class="form-field d-grid gap-2">
+        <button class="btn btn-primary btn-lg d-flex align-items-center justify-content-center" type="submit"
+          style="position: relative; padding-left: 32px; font-size: 0.95rem; background-color: #3B5998;">
+          <!-- Icon absolutely positioned to the left -->
+          <img [src]="fbbutton" alt="Facebook" style="position: absolute; left: 10px; width: 25px; height: 25px;" />
+          Login with Facebook
+        </button>
+      </div>
+      <div class="form-field d-grid gap-2">
+        <button class="btn btn-primary btn-lg d-flex align-items-center justify-content-center" type="submit"
+          style="position: relative; padding-left: 32px; font-size: 0.95rem;color: #000; background-color: #ffffff;">
+          <!-- Icon absolutely positioned to the left -->
+          <img [src]="googlebutton" alt="Google" style="position: absolute; left: 10px; width: 25px; height: 25px;" />
+          Login with Google
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
